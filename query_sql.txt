@@ -17,6 +17,12 @@ SELECT *
 FROM students 
 WHERE enrolment_date >= '2021-1-1';
 
+OPPURE
+
+SELECT * 
+FROM students 
+WHERE YEAR(enrolment_date) = 2021;
+
 
 4. Selezionare tutti i corsi che non hanno un sito web (cercare operatore NULL/NOT NULL)
 
