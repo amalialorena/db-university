@@ -1,7 +1,7 @@
 1. Selezionare tutti gli insegnanti
 
 SELECT * 
-FROM `teachers`;
+FROM teachers;
 
 
 2. Selezionare tutti gli studenti il cui nome inizia per "E" (cercare operatori wildecard)
@@ -34,10 +34,10 @@ WHERE phone IS NOT NULL;
 
 6. Selezionare tutti gli appelli d'esame dei mesi di giugno e luglio 2020
 
-SELECT `date` 
-FROM `exams`
- WHERE `date` >= '2020-06-1' 
-    AND `date` <= '2020-07-31';
+SELECT date 
+FROM exams
+ WHERE date >= '2020-06-1' 
+    AND date <= '2020-07-31';
 
 
 7. Qual è il numero totale degli studenti iscritti?
