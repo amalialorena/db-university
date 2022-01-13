@@ -11,13 +11,15 @@ GROUP BY YEAR(enrolment_date);
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-SELECT count(*)
+SELECT office_address, count(*)
 FROM teachers
 GROUP BY office_address;
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
-
+SELECT exam_id, AVG(vote)
+FROM exam_student
+GROUP BY exam_id;
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
@@ -78,7 +80,7 @@ FROM degrees
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-SELECT teachers.*
+SELECT DISTINCT teachers.*
 FROM teachers
     JOIN course_teacher
         ON teachers.id = course_teacher.teacher_id
