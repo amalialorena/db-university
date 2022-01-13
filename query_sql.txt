@@ -16,12 +16,17 @@ WHERE name LIKE 'E%';
 SELECT * 
 FROM students 
 WHERE enrolment_date >= '2021-1-1';
+AND enrolment_date <= '2021-12-31'
 
 OPPURE
 
 SELECT * 
 FROM students 
 WHERE YEAR(enrolment_date) = 2021;
+
+SELECT * 
+FROM students
+WHERE enrolment_date BETWEEN '2021-01-01' AND '2021-12-31'
 
 
 4. Selezionare tutti i corsi che non hanno un sito web (cercare operatore NULL/NOT NULL)
@@ -45,8 +50,21 @@ FROM exams
  WHERE date >= '2020-06-1' 
     AND date <= '2020-07-31';
 
+    OPPURE 
+
+SELECT date 
+FROM exams
+WHERE date LIKE '2020-06%' 
+OR date LIKE '2020-07%';
+
+SELECT date 
+FROM exams
+WHERE date BETWEEN '2020-06-01' AND '2020-07-31';
+
+
+WHERE YEAR(date) = 2020 AND MONTH(date) IN (6,7);
 
 7. Qual è il numero totale degli studenti iscritti?
 
-SELECT * 
+SELECT COUNT(*) 
 FROM students;
